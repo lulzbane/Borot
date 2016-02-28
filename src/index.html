@@ -1,15 +1,13 @@
 <html>
 <head>
-
+  <link rel="stylesheet" href="style/main.css" type="text/css">
 </head>
 <body>
-  <canvas id="main" width="640" height="480"></canvas>
+  <canvas id="background" width="640" height="480" class="gameLayer"></canvas>
+<canvas id="foreground" width="640" height="480" class="gameLayer"></canvas>
+  <script type="text/ecmascript" src="js/config.js"></script>
+  <script type="text/ecmascript" src="js/Utils/loader.js"></script>
   <script type="text/ecmascript" src="js/UI/screen.js"></script>
   <script type="text/ecmascript" src="js/core.js"></script>
-  <script type="text/ecmascript">
-    (function (global) {
-      Core.startup();
-    }(window));
-  </script>
 </body>
 </html>
