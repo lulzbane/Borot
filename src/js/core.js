@@ -1,20 +1,26 @@
 var Core;
 (function (Core) {
-    var Loader = Utils.Loader;
+    var loader = Utils.Loader;
     var config = Config;
-    var screen = UI.Screen;
+    var screen = Gfx.Screen;
+    var input = Logic.Input;
+    var player = Logic.Player;
+    var loop = Logic.Loop;
     function start() {
-        console.log('1');
+        loop.start();
     }
     function setup() {
-        if (Loader.assetsLoaded.tiles.loaded && Loader.assetsLoaded.static.loaded) {
+        if (loader.assetsLoaded.tiles.loaded && loader.assetsLoaded.static.loaded) {
+            screen.drawBackground();
+            input.init();
             start();
         }
     }
     function init() {
         window.removeEventListener('load', init);
-        Loader.loadImages(config.gameConfig.assets.tiles, Loader.assetsLoaded.tiles.assets, screen.drawBackground, setup);
-        Loader.loadImages(config.gameConfig.assets.static, Loader.assetsLoaded.static.assets, screen.drawStartingForeground, setup);
+        player.init();
+        loader.loadImages(config.gameConfig.assets.tiles, loader.assetsLoaded.tiles.assets, function () { loader.assetsLoaded.tiles.loaded = true; setup(); });
+        loader.loadImages(config.gameConfig.assets.static, loader.assetsLoaded.static.assets, function () { loader.assetsLoaded.static.loaded = true; setup(); });
     }
     Core.init = init;
     window.addEventListener('load', init, false);

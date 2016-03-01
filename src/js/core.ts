@@ -1,22 +1,28 @@
 ﻿module Core {
-  import Loader = Utils.Loader;
+  import loader = Utils.Loader;
   import config = Config;
-  import screen = UI.Screen;
+  import screen = Gfx.Screen;
+  import input = Logic.Input;
+  import player = Logic.Player;
+  import loop = Logic.Loop;
 
   function start() {
-    console.log('1');
+    loop.start();
   }
 
   function setup() {
-    if (Loader.assetsLoaded.tiles.loaded && Loader.assetsLoaded.static.loaded) {
+    if (loader.assetsLoaded.tiles.loaded && loader.assetsLoaded.static.loaded) {
+      screen.drawBackground();
+      input.init();
       start();  
     }
   }
 
   export function init() {
     window.removeEventListener('load', init);
-    Loader.loadImages(config.gameConfig.assets.tiles, Loader.assetsLoaded.tiles.assets, screen.drawBackground, setup);
-    Loader.loadImages(config.gameConfig.assets.static, Loader.assetsLoaded.static.assets, screen.drawStartingForeground, setup);
+    player.init(); 
+    loader.loadImages(config.gameConfig.assets.tiles, loader.assetsLoaded.tiles.assets, () => { loader.assetsLoaded.tiles.loaded = true; setup(); });
+    loader.loadImages(config.gameConfig.assets.static, loader.assetsLoaded.static.assets, () => { loader.assetsLoaded.static.loaded = true; setup();});
   }
 
   window.addEventListener('load', init, false);

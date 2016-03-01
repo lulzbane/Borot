@@ -12,7 +12,7 @@
     }
   };
 
-  export function loadImages(imagePathArray, imageLoadedArray, callback, callbackObj) {
+  export function loadImages(imagePathArray, imageLoadedArray, callback) {
     var graphicsLoaded = 0;
     for (var i = 0; i < imagePathArray.length; i++) {
       imageLoadedArray[i] = {};
@@ -23,7 +23,7 @@
         // Once the image is loaded increment the loaded graphics count and check if all images are ready.
         graphicsLoaded++;
         if (graphicsLoaded === imagePathArray.length) {
-          callback(callbackObj);
+          callback();
         }
       }
     }
