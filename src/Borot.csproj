@@ -22,15 +22,29 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="img\borot-east.png" />
+    <Content Include="img\borot-north.png" />
+    <Content Include="img\borot-south.png" />
+    <Content Include="img\borot-static.png" />
+    <Content Include="img\borot-west.png" />
     <Content Include="img\grasstile1.png" />
+    <Content Include="img\tutorial.png" />
     <Content Include="img\waterbg1.png" />
     <Content Include="index.html" />
     <Content Include="style\main.css" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <TypeScriptCompile Include="js\config.ts" />
     <TypeScriptCompile Include="js\core.ts" />
-    <TypeScriptCompile Include="js\UI\screen.ts" />
+    <TypeScriptCompile Include="js\Gfx\grid.ts" />
+    <TypeScriptCompile Include="js\Gfx\text.ts" />
+    <TypeScriptCompile Include="js\Logic\loop.ts" />
+    <TypeScriptCompile Include="js\Logic\player.ts" />
+    <TypeScriptCompile Include="js\Logic\input.ts" />
+    <TypeScriptCompile Include="js\Gfx\screen.ts" />
+    <TypeScriptCompile Include="js\Utils\maths.ts" />
+    <TypeScriptCompile Include="js\Utils\loader.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>

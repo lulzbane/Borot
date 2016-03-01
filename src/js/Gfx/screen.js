@@ -49,13 +49,15 @@ var Gfx;
             }
             var width = config.gameConfig.tiles.tileDimensions.width * 2;
             var height = config.gameConfig.tiles.tileDimensions.height * 2;
+            var mapOffsetX = config.gameConfig.tiles.mapOffset.x;
+            var mapOffsetY = config.gameConfig.tiles.mapOffset.y;
             for (var y = 0; y < config.gameConfig.tiles.map.length; y++) {
                 for (var x = 0; x < config.gameConfig.tiles.map[y].length; x++) {
                     var xOffset = 0;
                     if (y % 2 !== 0) {
                         xOffset = width / 2;
                     }
-                    var tilePosX = (x * width) - xOffset;
+                    var tilePosX = (x * width) + xOffset;
                     var tilePosY = (y * height) / 2;
                     var tileType = config.gameConfig.tiles.map[y][x];
                     if (tileType === 2) {
@@ -63,7 +65,7 @@ var Gfx;
                     }
                     var tile = loader.getTile(tileType);
                     if (tile) {
-                        backgroundContext.drawImage(tile, Math.round(tilePosX), Math.round(tilePosY / 2), width, height);
+                        backgroundContext.drawImage(tile, Math.round(tilePosX) + mapOffsetX, Math.round(tilePosY / 2) + mapOffsetY, width, height);
                     }
                 }
             }

@@ -2,6 +2,7 @@
   import loader = Utils.Loader;
   import config = Config;
   import screen = Gfx.Screen;
+  import grid = Gfx.Grid;
   import input = Logic.Input;
   import player = Logic.Player;
   import loop = Logic.Loop;
@@ -13,6 +14,7 @@
   function setup() {
     if (loader.assetsLoaded.tiles.loaded && loader.assetsLoaded.static.loaded) {
       screen.drawBackground();
+      grid.init();
       input.init();
       start();  
     }

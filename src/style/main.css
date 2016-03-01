@@ -12,3 +12,32 @@ body{
   margin-left: -320px;
   margin-top: -240px;
 }
+
+#logo {
+  position: absolute;
+  background-image: url('../img/logo.png');
+  width: 640px;
+  height: 240px;
+  top: 50%;
+  left: 50%;
+  margin-left: -320px;
+  margin-top: -480px;
+}
+
+#message {
+  position: absolute;
+  width: 620px;
+  top: 50%;
+  left: 50%;
+  margin-top: 240px;
+  margin-left: -320px;
+  color: #fff;
+  background: #000;
+  text-align: center;
+  font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+  font-size: 22px;
+  vertical-align: text-top;
+  opacity: 0.8;
+  display: inline-block;
+  vertical-align:middle;
+}

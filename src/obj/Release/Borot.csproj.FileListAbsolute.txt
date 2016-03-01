@@ -1,0 +1,5 @@
+D:\Files\Temp\me\Borot\src\obj\Release\Borot.csprojResolveAssemblyReference.cache
+D:\Files\Temp\me\Borot\src\bin\Borot.dll
+D:\Files\Temp\me\Borot\src\bin\Borot.pdb
+D:\Files\Temp\me\Borot\src\obj\Release\Borot.dll
+D:\Files\Temp\me\Borot\src\obj\Release\Borot.pdb

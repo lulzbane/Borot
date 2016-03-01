@@ -3,6 +3,7 @@ var Core;
     var loader = Utils.Loader;
     var config = Config;
     var screen = Gfx.Screen;
+    var grid = Gfx.Grid;
     var input = Logic.Input;
     var player = Logic.Player;
     var loop = Logic.Loop;
@@ -12,6 +13,7 @@ var Core;
     function setup() {
         if (loader.assetsLoaded.tiles.loaded && loader.assetsLoaded.static.loaded) {
             screen.drawBackground();
+            grid.init();
             input.init();
             start();
         }
